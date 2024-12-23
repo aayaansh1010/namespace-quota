@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: sardana-compute-resources
-  namespace: my-namespace
+  name: manohar-compute-resources
+  namespace: manohar
 spec:
   hard:
     requests.cpu: "500m"
