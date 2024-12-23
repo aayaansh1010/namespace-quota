@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: compute-resources
+  name: sardana-compute-resources
   namespace: my-namespace
 spec:
   hard:
