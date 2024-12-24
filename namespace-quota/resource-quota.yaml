@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: manohar-compute-resources
+  name: saba-compute-resources
   namespace: manohar
 spec:
   hard:
