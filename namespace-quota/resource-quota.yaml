@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: saba-compute-resources
-  namespace: manohar
+  namespace: saba
 spec:
   hard:
     requests.cpu: "500m"
