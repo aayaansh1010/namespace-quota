@@ -1,11 +1,11 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: project-admin
-  namespace: <your-namespace>  # Replace with the actual namespace
+  name: aayaansh-project-admin
+  namespace: aayaansh
 subjects:
-  - kind: User  # Change to 'Group' if assigning to a group
-    name: <user-or-group-name>  # Replace with the actual user or group
+  - kind: User  
+    name: vsardana@volvocars.com
     apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: ClusterRole
