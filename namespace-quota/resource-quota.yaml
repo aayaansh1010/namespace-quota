@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: aayaansh-compute-resources
-  namespace: saba
+  namespace: aayaansh
 spec:
   hard:
     requests.cpu: "500m"
