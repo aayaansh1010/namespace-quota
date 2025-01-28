@@ -4,7 +4,7 @@ apiVersion: v1
 kind: ResourceQuota
 metadata:
   name: 'saba1-compute-resources'
-  namespace: 'saba1'
+  namespace: 'test'
 spec:
   hard:
     requests.cpu: "500m"
