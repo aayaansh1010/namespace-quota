@@ -1,0 +1,51 @@
+name: Update File
+on:
+    workflow_dispatch: 
+        inputs:
+          namespace:
+            description: "namespace"
+            required: true
+            type: string
+          resourcequota:
+            description: "resourcequota"
+            required: true
+            type: string
+         
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wow-actions/update-file@v1.2.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS }}
+          path: namespace-quota/namespace.yaml
+          opening_comment: '#<!-- [START AUTO UPDATE] -->'
+          closing_comment: '#<!-- [END AUTO UPDATE] -->'
+          warning_comment: '#<!-- Please keep comment here to allow auto-update -->'
+          content: |
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                  name: '${{ inputs.namespace }}'
+
+      - uses: wow-actions/update-file@v1.2.0
+        with:
+          GITHUB_TOKEN: ${{ secrets.ACCESS }}
+          path: namespace-quota/resource-quota.yaml
+          opening_comment: '#<!-- [START AUTO UPDATE] -->'
+          closing_comment: '#<!-- [END AUTO UPDATE] -->'
+          warning_comment: '#<!-- Please keep comment here to allow auto-update -->'
+          content: |
+                apiVersion: v1
+                kind: ResourceQuota
+                metadata:
+                  name: '${{ inputs.resourcequota }}'
+                  namespace: '${{ inputs.namespace }}'
+                spec:
+                  hard:
+                    requests.cpu: "500m"
+                    requests.memory: "512Mi"
+                    limits.cpu: "1"
+                    limits.memory: "1Gi"
+
+                
