@@ -3,8 +3,8 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: 'saba1-compute-resources'
-  namespace: 'test'
+  name: 'vishnu-compute-resources'
+  namespace: 'vishnu'
 spec:
   hard:
     requests.cpu: "500m"
